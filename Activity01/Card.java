@@ -1,5 +1,6 @@
 package Activity01;
-
+import java.util.*;
+import java.lang.*;
 /**
  * Card.java
  *
@@ -33,8 +34,10 @@ public class Card {
      * @param cardPointValue an <code>int</code> value
      *                  containing the point value of the card
      */
-    public Card(String cardRank, String cardSuit, int cardPointValue) {
-
+    public Card(String cardRank , String cardSuit, int cardPointValue) {
+      suit = cardSuit;
+      rank = cardRank;
+      pointValue = cardPointValue;
     }
 
 
@@ -43,7 +46,7 @@ public class Card {
      * @return this <code>Card's</code> suit.
      */
     public String suit() {
-
+        return suit;
     }
 
     /**
@@ -51,15 +54,19 @@ public class Card {
      * @return this <code>Card's</code> rank.
      */
     public String rank() {
+ return rank;
+}
 
-    }
+    
+
 
    /**
      * Accesses this <code>Card's</code> point value.
      * @return this <code>Card's</code> point value.
      */
-    public int pointValue() {
 
+    public int pointValue() {
+        return pointValue;
     }
 
     /** Compare this card with the argument.
@@ -69,7 +76,7 @@ public class Card {
      *         false otherwise.
      */
     public boolean matches(Card otherCard) {
-
+        return(rank== otherCard.rank() && suit == otherCard.suit() && pointValue == otherCard.pointValue());
     }
 
     /**
@@ -84,6 +91,6 @@ public class Card {
      */
     @Override
     public String toString() {
-
+        return (rank+ "of" + suit + " (" + pointValue + ")");
     }
 }
